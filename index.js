@@ -17,7 +17,7 @@ function getCanvas() {
     return canvasData;
 }
 
-async function getBarcodeFormats() {
+async function getBarcodeSupportedFormats() {
     let formats = "null";
     if ('BarcodeDetector' in window && BarcodeDetector.getSupportedFormats != undefined) {
         formats = await BarcodeDetector.getSupportedFormats();
@@ -28,8 +28,13 @@ async function getBarcodeFormats() {
 
 async function main() {
     let fingerprint = {};
+
+    // canvas
     fingerprint["canvas"] = getCanvas();
-    fingerprint["barcodeFormats"] = await getBarcodeFormats();
+
+    // barcode
+    fingerprint["barcodeSupportedFormats"] = await getBarcodeSupportedFormats();
+
     console.log(fingerprint);
 }
 
