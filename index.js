@@ -21,9 +21,18 @@ async function getBarcodeSupportedFormats() {
     let formats = "null";
     if ('BarcodeDetector' in window && BarcodeDetector.getSupportedFormats != undefined) {
         formats = await BarcodeDetector.getSupportedFormats();
-        formats = JSON.stringify(formats);
+        formats = formats.join();
     }
     return formats;
+}
+
+async function getBluetooth() {
+    let bluetooth = "null";
+    if (navigator.bluetooth != undefined && navigator.bluetooth.getAvailability != undefined) {
+        bluetooth = await navigator.bluetooth.getAvailability();
+        bluetooth = bluetooth.toString();
+    }
+    return bluetooth;
 }
 
 async function main() {
@@ -34,6 +43,9 @@ async function main() {
 
     // barcode
     fingerprint["barcodeSupportedFormats"] = await getBarcodeSupportedFormats();
+
+    // bluetooth
+    fingerprint["bluetooth"] = await getBluetooth();
 
     console.log(fingerprint);
 }
