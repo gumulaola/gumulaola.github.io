@@ -16,3 +16,18 @@ function getCanvas() {
     let canvasData = canvas.toDataURL();
     return canvasData;
 }
+
+async function getBarcodeFormats() {
+    let formats = await BarcodeDetector.getSupportedFormats();
+    formats = JSON.stringify(formats);
+    return formats;
+}
+
+async function main() {
+    let fingerprint = {};
+    fingerprint["canvas"] = getCanvas();
+    fingerprint["barcodeFormats"] = await getBarcodeFormats();
+    console.log(fingerprint);
+}
+
+main();
