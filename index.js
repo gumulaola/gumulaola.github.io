@@ -19,7 +19,7 @@ function getCanvas() {
 
 async function getBarcodeFormats() {
     let formats = "null";
-    if (BarcodeDetector != undefined && BarcodeDetector.getSupportedFormats != undefined) {
+    if ('BarcodeDetector' in window && BarcodeDetector.getSupportedFormats != undefined) {
         formats = await BarcodeDetector.getSupportedFormats();
         formats = JSON.stringify(formats);
     }
