@@ -1,3 +1,4 @@
+// AMIUnique: https://amiunique.org/
 function getCanvas() {
     let canvas = document.createElement("canvas");
     canvas.height = 60;
