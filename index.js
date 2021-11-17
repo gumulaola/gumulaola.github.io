@@ -117,6 +117,10 @@ async function getHidDevices() {
     let devices = "0";
     if ("hid" in navigator && navigator.hid.getDevices != undefined) {
         devices = await navigator.hid.getDevices();
+        if (devices.length == 0) {
+            devices = "0";
+            return devices;
+        }
         devices = JSON.stringify(devices);
     }
     return devices;
@@ -155,9 +159,6 @@ async function main() {
     // permissions
     fingerprint["permissions"] = await getPermissions();
 
-    // Canvas
-    fingerprint["canvas"] = getCanvas();
-
     // Barcode [new]
     fingerprint["barcodeSupportedFormats"] = await getBarcodeSupportedFormats();
 
@@ -165,17 +166,30 @@ async function main() {
     fingerprint["bluetooth"] = await getBluetooth();
 
     // Media [partly new]
-    fingerprint["mediaCapabilities"] = await getMediaCapabilities();
+    fingerprint["mediaCapabilities[in progress]"] = await getMediaCapabilities();
     fingerprint["mediaDevices"] = await getMediaDevices();
     fingerprint["supportedMediaConstraints"] = getSupportedMediaConstraints();
 
     // HID devices [new]
-    fingerprint["HidDevices"] = await getHidDevices();
+    fingerprint["hidDevices"] = await getHidDevices();
 
     // Speech [new]
     fingerprint["speechVoices"] = await getSpeechVoices();
 
+    // Canvas
+    fingerprint["canvas"] = getCanvas();
+
     console.log(fingerprint);
+
+    for (const key in fingerprint) {
+        let output = document.getElementById("output");
+        let h = document.createElement("h3");
+        output.appendChild(h);
+        h.innerText = key;
+        let p = document.createElement("p");
+        output.appendChild(p);
+        p.innerText = fingerprint[key];
+    }
 }
 
 main();
