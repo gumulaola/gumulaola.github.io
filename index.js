@@ -36,6 +36,7 @@ async function getBluetooth() {
     return bluetooth;
 }
 
+// TODO? Need to be improved
 async function getMediaCapabilities() {
     let audio = "0";
     let video = "0";
@@ -151,27 +152,27 @@ async function getSpeechVoices() {
 async function main() {
     let fingerprint = {};
 
+    // permissions
+    fingerprint["permissions"] = await getPermissions();
+
     // Canvas
     fingerprint["canvas"] = getCanvas();
 
-    // Barcode
+    // Barcode [new]
     fingerprint["barcodeSupportedFormats"] = await getBarcodeSupportedFormats();
 
-    // Bluetooth
+    // Bluetooth [new]
     fingerprint["bluetooth"] = await getBluetooth();
 
-    // Media
+    // Media [partly new]
     fingerprint["mediaCapabilities"] = await getMediaCapabilities();
     fingerprint["mediaDevices"] = await getMediaDevices();
     fingerprint["supportedMediaConstraints"] = getSupportedMediaConstraints();
 
-    // permissions
-    fingerprint["permissions"] = await getPermissions();
-
-    // HID devices
+    // HID devices [new]
     fingerprint["HidDevices"] = await getHidDevices();
 
-    // Speech
+    // Speech [new]
     fingerprint["speechVoices"] = await getSpeechVoices();
 
     console.log(fingerprint);
