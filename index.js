@@ -1071,7 +1071,7 @@ async function main() {
     fingerprint["canvas"] = getCanvas();
 
     // DOM
-    fingerprint["DOM"] = getSupportedDOMAttributes();
+    fingerprint["DOMSupportInfo"] = getSupportedDOMAttributes();
 
     console.log(fingerprint);
 
