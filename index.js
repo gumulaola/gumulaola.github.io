@@ -1044,8 +1044,780 @@ function getSupportedDOMAttributes() {
     return JSON.stringify(elementWithoutFunc);
 }
 
+function getSupportedCSS() {
+    let CSSList = {
+        "accent-color": [
+            "auto"
+        ],
+        "align-content": [
+            "center",
+            "start",
+            "end",
+            "flex-start",
+            "flex-end",
+            "normal",
+            "baseline",
+            "first baseline",
+            "last baseline",
+            "space-between",
+            "space-around",
+            "space-evenly",
+            "stretch",
+            "safe center",
+            "unsafe center"
+        ],
+        "align-item": [
+            "normal",
+            "stretch",
+            "center",
+            "start",
+            "end",
+            "flex-start",
+            "flex-end",
+            "self-start",
+            "self-end",
+            "baseline",
+            "first baseline",
+            "last baseline",
+            "safe center",
+            "unsafe center"
+        ],
+        "align-self": [
+            "auto",
+            "normal",
+            "center",
+            "start",
+            "end",
+            "self-start",
+            "self-end",
+            "flex-start",
+            "flex-end",
+            "baseline",
+            "first baseline",
+            "last baseline",
+            "stretch",
+            "safe center",
+            "unsafe center"
+        ],
+        "align-tracks": [
+            "start",
+            "space-between",
+            "center",
+            "start,center,end"
+        ],
+        "all": [
+            "revert"
+        ],
+        "animation-delay": [
+            "3s",
+            "2s, 4ms"
+        ],
+        "animation-direction": [
+            "normal",
+            "reverse",
+            "alternate",
+            "alternate-reverse"
+        ],
+        "animation-duration": [
+            "6s",
+            "1s, 15s",
+            "10s, 30s, 230ms"
+        ],
+        "animation-fill-mode": [
+            "none",
+            "forwards",
+            "backwards",
+            "both"
+        ],
+        "animation-iteration-count": [
+            "infinite",
+            "2.4"
+        ],
+        "animation-name": [
+            "none"
+        ],
+        "animation-play-state": [
+            "running",
+            "paused",
+            "paused, running, running"
+        ],
+        "animation-timing-function": [
+            "ease",
+            "ease-in",
+            "ease-out",
+            "ease-in-out",
+            "liner",
+            "step-start",
+            "step-end",
+            "cubic-bezier(0.1, 0.7, 1.0, 0.1)",
+            "steps(4, end)",
+            "frames(10)",
+            "ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1)"
+        ],
+        "animation": [
+            "3s ease-in 1s 2 reverse both paused slidein"
+        ],
+        "-moz-appearance": [
+            "none",
+            "button",
+            "checkbox",
+            "scrollbarbutton-up"
+        ],
+        "-webkit-appearance": [
+            "none",
+            "button",
+            "checkbox",
+            "scrollbarbutton-up"
+        ],
+        "aspect-ratio": [
+            "1 / 1"
+        ],
+        "backdrop-filter": [
+            "none",
+            "blur(2px)",
+            "brightness(60%)",
+            "contrast(40%)",
+            "drop-shadow(4px 4px 10px blue)",
+            "grayscale(30%)",
+            "hue-rotate(120deg)",
+            "invert(70%)",
+            "opacity(20%)",
+            "sepia(90%)",
+            "saturate(80%)"
+        ],
+        "backface-visibility": [
+            "visible",
+            "hidden"
+        ],
+        "background-attachment": [
+            "scroll",
+            "fixed",
+            "local"
+        ],
+        "background-blend-mode": [
+            "normal",
+            "darken, luminosity"
+        ],
+        "background-clip": [
+            "border-box",
+            "padding-box",
+            "content-box",
+            "text"
+        ],
+        "background-color": [
+            "red",
+            "currentColor",
+            "transparent",
+            "hsla(50, 33%, 25%, 0.75)"
+        ],
+        "background-image": [
+            "none"
+        ],
+        "background-origin": [
+            "border-box",
+            "padding-box",
+            "content-box"
+        ],
+        "background-position-x:": [
+            "left",
+            "center",
+            "right"
+        ],
+        "background-position-y": [
+            "top",
+            "center",
+            "bottom"
+        ],
+        "background-position": [
+            "top",
+            "center",
+            "bottom",
+            "right",
+            "left"
+        ],
+        "background-repeat": [
+            "repeat-x",
+            "repeat-y",
+            "repeat",
+            "space",
+            "round",
+            "no-repeat"
+        ],
+        "background-size": [
+            "cover",
+            "contain"
+        ],
+        "block-size": [
+            "max-content",
+            "min-content",
+            "available",
+            "fit-content",
+            "auto"
+        ],
+        "border-block-color": [
+            "yellow"
+        ],
+        "border-block-end-color": [
+            "yellow"
+        ],
+        "border-block-end-style": [
+            "dashed",
+            "dotted",
+            "groove"
+        ],
+        "border-block-end-width": [
+            "5px",
+            "thick"
+        ],
+        "border-block-end": [
+            "1px",
+            "2px dotted",
+            "medium dashed blue"
+        ],
+        "border-block-style": [
+            "dashed",
+            "dotted",
+            "groove"
+        ],
+        "border-bottom-left-radius": [
+            "3px"
+        ],
+        "border-bottom-style": [
+            "none",
+            "hidden",
+            "dotted",
+            "dashed"
+        ],
+        "border-end-end-radius": [
+            "10px",
+            "1em"
+        ],
+        "border-image-repeat": [
+            "type",
+            "horizontal vertical"
+        ],
+        "border-image-slice": [
+            "10% fill 7 12"
+        ],
+        "border-image-source": [
+            "none"
+        ],
+        "border-inline-color": [
+            "yellow"
+        ],
+        "border-inline-end": [
+            "1px",
+            "2px dashed",
+            "medium dashed blue"
+        ],
+        "border-inline-start-style": [
+            "dashed",
+            "dotted",
+            "revert",
+            "groove"
+        ],
+        "border-inline-start-width": [
+            "5px",
+            "thick"
+        ],
+        "border-inline-style": [
+            "dashed",
+            "dotted",
+            "revert",
+            "groove"
+        ],
+        "border-left-style": [
+            "dashed",
+            "dotted",
+            "groove"
+        ],
+        "border-start-end-radius": [
+            "10px",
+            "1em"
+        ],
+        "box-decoration-break": [
+            "slice",
+            "clone"
+        ],
+        "box-flex-group": [
+            "1",
+            "5"
+        ],
+        "-moz-box-flex": [
+            "0"
+        ],
+        "-webkit-box-flex": [
+            "0"
+        ],
+        "box-orient": [
+            "horizontal",
+            "vertical",
+            "inline-axis",
+            "block-axis"
+        ],
+        "break-after": [
+            "auto",
+            "avoid",
+            "always",
+            "all",
+            "avoid-page",
+            "page",
+            "left",
+            "right",
+            "recto",
+            "verso",
+            "avoid-region",
+            "region",
+            "avoid-column",
+            "column"
+        ],
+        "caret-color": [
+            "auto",
+            "transparent",
+            "currentColor"
+        ],
+        "clip-path": [
+            "margin-box",
+            "border-box",
+            "padding-box",
+            "content-box",
+            "fill-box",
+            "stroke-box",
+            "view-box",
+            "inset(100px 50px)",
+            "circle(50px at 0 100px)",
+            "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+            "path('M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z')",
+            "padding-box circle(50px at 0 100px)"
+        ],
+        "color-scheme": [
+            "normal",
+            "light",
+            "dark",
+            "light dark"
+        ],
+        "column-fill": [
+            "auto",
+            "balance"
+        ],
+        "column-gap": [
+            "normal",
+            "3px",
+            "2.5em",
+            "3%"
+        ],
+        "column-span": [
+            "none",
+            "all"
+        ],
+        "contain-intrinsic-size": [
+            "1000px",
+            "10rem",
+            "10%"
+        ],
+        "contain": [
+            "none",
+            "strict"
+        ],
+        "content-visibility": [
+            "visible",
+            "hidden",
+            "auto"
+        ],
+        "counter-set": [
+            "none"
+        ],
+        "cursor": [
+            "pointer",
+            "auto"
+        ],
+        "filter": [
+            "blur(5px)",
+            "brightness(0.4)",
+            "contrast(200%)",
+            "drop-shadow(16px 16px 20px blue)",
+            "grayscale(50%)",
+            "hue-rotate(90deg)",
+            "invert(75%)",
+            "opacity(25%)",
+            "saturate(30%)",
+            "sepia(60%)",
+            "none",
+            "contrast(175%) brightness(3%)"
+        ],
+        "flex-basis": [
+            "10em",
+            "3px",
+            "auto",
+            "fill",
+            "max-content",
+            "min-content",
+            "fit-content",
+            "content"
+        ],
+        "flex-grow": [
+            "3",
+            "0.6"
+        ],
+        "float": [
+            "left",
+            "none",
+            "inline-start",
+            "inline-end"
+        ],
+        "font-language-override": [
+            "normal",
+            "ENG",
+            "TRK"
+        ],
+        "font-optical-sizing": [
+            "none",
+            "auto"
+        ],
+        "font-size-adjust": [
+            "none",
+            "0.5"
+        ],
+        "font-smooth": [
+            "auto",
+            "never",
+            "always"
+        ],
+        "font-stretch": [
+            "ultra-condensed",
+            "extra-condensed",
+            "condensed",
+            "semi-condensed",
+            "normal",
+            "semi-expanded",
+            "expanded",
+            "extra-expanded",
+            "ultra-expanded"
+        ],
+        "font-style": [
+            "normal",
+            "italic",
+            "oblique",
+            "oblique 10deg"
+        ],
+        "font-synthesis": [
+            "style weight"
+        ],
+        "font-variant-caps": [
+            "normal",
+            "small-caps",
+            "all-small-caps",
+            "petite-caps",
+            "all-petite-caps",
+            "unicase",
+            "titling-caps"
+        ],
+        "font-variant-position": [
+            "normal",
+            "sub",
+            "super"
+        ],
+        "font-variant": [
+            "small-caps",
+            "common-ligatures small-caps"
+        ],
+        "font-variation-settings": [
+            "normal"
+        ],
+        "forced-color-adjust": [
+            "auto",
+            "none"
+        ],
+        "gap": [
+            "20px",
+            "1em",
+            "3vmin",
+            "0.5cm",
+            "calc(10% + 20px)",
+            "calc(20px + 10%) calc(10% - 5px)"
+        ],
+        "grid-auto-columns": [
+            "min-content",
+            "max-content",
+            "auto",
+            "minmax(max-content, 2fr)",
+            "fit-content(20%)"
+        ],
+        "grid-template-columns": [
+            "minmax(100px, 1fr)",
+            "fit-content(40%)",
+            "repeat(3, 200px)"
+        ],
+        "hanging-punctuation": [
+            "none",
+            "first",
+            "last",
+            "force-end",
+            "allow-end"
+        ],
+        "height": [
+            "auto",
+            "fit-content",
+            "fit-content(10px)",
+            "stretch",
+            "max-content"
+        ],
+        "hyphens": [
+            "none",
+            "manual",
+            "auto"
+        ],
+        "image-orientation": [
+            "0deg",
+            "-90deg",
+            "90deg flip"
+        ],
+        "ime-mode": [
+            "auto",
+            "inactive",
+            "disabled"
+        ],
+        "initial-letter": [
+            "1.5"
+        ],
+        "inline-size": [
+            "max-content",
+            "fit-content(20em)",
+            "auto"
+        ],
+        "inset-block-end": [
+            "10%",
+            "auto"
+        ],
+        "isolation": [
+            "isolate",
+            "auto"
+        ],
+        "justify-content": [
+            "space-evenly",
+            "baseline",
+            "stretch"
+        ],
+        "justify-tracks": [
+            "start",
+            "space-between",
+            "center"
+        ],
+        "line-break": [
+            "auto",
+            "loose",
+            "normal",
+            "strict",
+            "anywhere"
+        ],
+        "line-height-step": [
+            "18pt"
+        ],
+        "list-style-type": [
+            "disc",
+            "circle",
+            "square",
+            "decimal",
+            "georgian",
+            "trad-chinese-informal",
+            "kannada"
+        ],
+        "mask-border-outset": [
+            "1rem",
+            "1.5"
+        ],
+        "mask-clip": [
+            "border",
+            "content",
+            "padding",
+            "text"
+        ],
+        "mask-composite": [
+            "add",
+            "subtract",
+            "intersect",
+            "exclude"
+        ],
+        "mask-image": [
+            "none"
+        ],
+        "mask-mode": [
+            "alpha",
+            "luminance",
+            "match-source"
+        ],
+        "mask-origin": [
+            "content-box",
+            "fill-box",
+            "padding",
+            "stroke-box",
+            "view-box"
+        ],
+        "math-style": [
+            "normal",
+            "compact"
+        ],
+        "max-block-size": [
+            "auto",
+            "fit-content(20em)",
+            "max-content"
+        ],
+        "mix-blend-mode": [
+            "hard-light",
+            "luminosity"
+        ],
+        "object-fit": [
+            "fill",
+            "contain",
+            "cover",
+            "none",
+            "scale-down"
+        ],
+        "offset-anchor": [
+            "top",
+            "center",
+            "left"
+        ],
+        "offset-distance": [
+            "40px",
+            "50%",
+            "0"
+        ],
+        "orphans": [
+            "2",
+            "3"
+        ],
+        "outline-color": [
+            "blue",
+            "invert"
+        ],
+        "overflow-anchor": [
+            "auto",
+            "none"
+        ],
+        "overflow-block": [
+            "visible",
+            "hidden",
+            "scroll",
+            "auto"
+        ],
+        "overflow-clip-margin": [
+            "20px",
+            "1em"
+        ],
+        "overscroll-behavior-block": [
+            "auto",
+            "contain",
+            "none"
+        ],
+        "overscroll-behavior": [
+            "auto",
+            "contain",
+            "none"
+        ],
+        "padding-block": [
+            "10px 20px",
+            "5% 2%"
+        ],
+        "quotes": [
+            "none"
+        ],
+        "resize": [
+            "none",
+            "both",
+            "horizontal",
+            "vertical",
+            "block",
+            "inline"
+        ],
+        "rotate": [
+            "90deg"
+        ],
+        "ruby-position": [
+            "over",
+            "under",
+            "alternate"
+        ],
+        "scale": [
+            "none",
+            "2"
+        ],
+        "scrollbar-gutter": [
+            "auto",
+            "stable",
+            "stable both-edges"
+        ],
+        "shape-outside": [
+            "none",
+            "content-box",
+            "circle()",
+            "ellipse()",
+            "inset(10px 10px 10px 10px)",
+            "polygon(10px 10px, 20px 20px, 30px 30px)",
+            "linear-gradient(45deg, rgba(255, 255, 255, 0) 150px, red 150px)"
+        ],
+        "text-decoration-skip": [
+            "none",
+            "objects",
+            "spaces",
+            "edges",
+            "box-decoration"
+        ],
+        "text-decoration-thickness": [
+            "auto",
+            "from-font",
+            "0.1em",
+            "3px"
+        ],
+        "text-emphasis": [
+            "filled",
+            "open"
+        ],
+        "text-rendering": [
+            "auto",
+            "optimizeSpeed",
+            "optimizeLegibility",
+            "geometricPrecision"
+        ],
+        "translate": [
+            "none",
+            "100px",
+            "50%"
+        ],
+        "unicode-bidi": [
+            "normal",
+            "embed",
+            "isolate",
+            "bidi-override",
+            "isolate-override",
+            "plaintext"
+        ],
+        "user-modify": [
+            "read-only",
+            "read-write",
+            "write-only"
+        ],
+        "zoom": [
+            "normal",
+            "reset"
+        ]
+    };
+    let supportInfo = {};
+    for (const item in CSSList) {
+        for (const value of CSSList[item]) {
+            let support = CSS.supports(item + ": " + value);
+            let CSSText = `${item}: ${value}`;
+            supportInfo[CSSText] = support;
+        }
+    }
+    return JSON.stringify(supportInfo);
+}
+
 async function main() {
     let fingerprint = {};
+
+    // User-Agent
+    fingerprint["userAgent"] = navigator.userAgent;
 
     // permissions
     fingerprint["permissions"] = await getPermissions();
@@ -1062,7 +1834,7 @@ async function main() {
     fingerprint["supportedMediaConstraints"] = getSupportedMediaConstraints();
 
     // HID devices [new]
-    // fingerprint["hidDevices"] = await getHidDevices();
+    // fingerprint["hidDevices[in progress]"] = await getHidDevices();
 
     // Speech [new]
     fingerprint["speechVoices"] = await getSpeechVoices();
@@ -1072,6 +1844,9 @@ async function main() {
 
     // DOM
     fingerprint["DOMSupportInfo"] = getSupportedDOMAttributes();
+
+    // CSS
+    fingerprint["CSSSupportInfo"] = getSupportedCSS();
 
     console.log(fingerprint);
 

@@ -1,0 +1,125 @@
+{
+  "accent-color": [
+    "auto"
+  ],
+  "align-content": [
+    "center",
+    "start",
+    "end",
+    "flex-start",
+    "flex-end",
+    "normal",
+    "baseline",
+    "first baseline",
+    "last baseline",
+    "space-between",
+    "space-around",
+    "space-evenly",
+    "stretch",
+    "safe center",
+    "unsafe center"
+  ],
+  "align-item": [
+    "normal",
+    "stretch",
+    "center",
+    "start",
+    "end",
+    "flex-start",
+    "flex-end",
+    "self-start",
+    "self-end",
+    "baseline",
+    "first baseline",
+    "last baseline",
+    "safe center",
+    "unsafe center"
+  ],
+  "align-self": [
+    "auto",
+    "normal",
+    "center",
+    "start",
+    "end",
+    "self-start",
+    "self-end",
+    "flex-start",
+    "flex-end",
+    "baseline",
+    "first baseline",
+    "last baseline",
+    "stretch",
+    "safe center",
+    "unsafe center"
+  ],
+  "align-tracks": [
+    "start",
+    "space-between",
+    "center",
+    "start,center,end"
+  ],
+  "all": [
+    "revert"
+  ],
+  "animation-delay": [
+    "3s",
+    "2s, 4ms"
+  ],
+  "animation-direction": [
+    "normal",
+    "reverse",
+    "alternate",
+    "alternate-reverse"
+  ],
+  "animation-duration": [
+    "6s",
+    "1s, 15s",
+    "10s, 30s, 230ms"
+  ],
+  "animation-fill-mode": [
+    "none",
+    "forwards",
+    "backwards",
+    "both"
+  ],
+  "animation-iteration-count": [
+    "infinite",
+    "2.4"
+  ],
+  "animation-name": [
+    "none"
+  ],
+  "animation-play-state": [
+    "running",
+    "paused",
+    "paused, running, running"
+  ],
+  "animation-timing-function": [
+    "ease",
+    "ease-in",
+    "ease-out",
+    "ease-in-out",
+    "liner",
+    "step-start",
+    "step-end",
+    "cubic-bezier(0.1, 0.7, 1.0, 0.1)",
+    "steps(4, end)",
+    "frames(10)",
+    "ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1)"
+  ],
+  "animation": [
+    "3s ease-in 1s 2 reverse both paused slidein"
+  ],
+  "-moz-appearance": [
+    "none",
+    "button",
+    "checkbox",
+    "scrollbarbutton-up"
+  ],
+  "-webkit-appearance": [
+    "none",
+    "button",
+    "checkbox",
+    "scrollbarbutton-up"
+  ]
+}
