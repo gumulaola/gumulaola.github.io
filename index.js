@@ -91,32 +91,94 @@ function getSupportedMediaConstraints() {
 async function getPermissions() {
     let permissions = "Not Support";
     if ("permissions" in navigator) {
+        let res = {};
         try {
-            let res = {};
             let geolocation = await navigator.permissions.query({ name: 'geolocation' });
             res["geolocation"] = geolocation.state;
+        } catch {
+            res["geolocation"] = "Not Support";
+        }
+        try {
             let notifications = await navigator.permissions.query({ name: 'notifications' });
             res["notifications"] = notifications.state;
+        } catch {
+            res["notifications"] = "Not Support";
+        }
+        // Newly
+        try {
             let push = await navigator.permissions.query(Object.assign({ name: "push" }, { userVisibleOnly: true }));
             res["push"] = push.state;
+        } catch {
+            res["push"] = "Not Support";
+        }
+        try {
             let midi = await navigator.permissions.query(Object.assign({ name: "midi" }, { sysex: true }));
             res["midi"] = midi.state;
+        } catch {
+            res["midi"] = "Not Support";
+        }
+        try {
             let camera = await navigator.permissions.query({ name: 'camera' });
             res["camera"] = camera.state;
+        } catch {
+            res["camera"] = "Not Support";
+        }
+        try {
             let microphone = await navigator.permissions.query({ name: 'microphone' });
             res["microphone"] = microphone.state;
+        } catch {
+            res["microphone"] = "Not Support";
+        }
+        try {
             let backgroundSync = await navigator.permissions.query({ name: 'background-sync' });
             res["backgroundSync"] = backgroundSync.state;
+        } catch {
+            res["backgroundSync"] = "Not Support";
+        }
+        try {
+            let paymentHandler = await navigator.permissions.query({ name: 'payment-handler' });
+            res["paymentHandler"] = paymentHandler.state;
+        } catch {
+            res["paymentHandler"] = "Not Support";
+        }
+        try {
+            let persistentStorage = await navigator.permissions.query({ name: 'persistent-storage' });
+            res["persistentStorage"] = persistentStorage.state;
+        } catch {
+            res["persistentStorage"] = "Not Support";
+        }
+        try {
             let accelerometer = await navigator.permissions.query({ name: 'accelerometer' });
             res["accelerometer"] = accelerometer.state;
+        } catch {
+            res["accelerometer"] = "Not Support";
+        }
+        // Newly
+        try {
             let gyroscope = await navigator.permissions.query({ name: 'gyroscope' });
             res["gyroscope"] = gyroscope.state;
+        } catch {
+            res["gyroscope"] = "Not Support";
+        }
+        try {
             let magnetometer = await navigator.permissions.query({ name: 'magnetometer' });
             res["magnetometer"] = magnetometer.state;
-            permissions = JSON.stringify(res);
         } catch {
-            permissions = "Not Support";
+            res["magnetometer"] = "Not Support";
         }
+        try {
+            let clipboardRead = await navigator.permissions.query({ name: 'clipboard-read' });
+            res["clipboardRead"] = clipboardRead.state;
+        } catch {
+            res["clipboardRead"] = "Not Support";
+        }
+        try {
+            let clipboardWrite = await navigator.permissions.query({ name: 'clipboard-write' });
+            res["clipboardWrite"] = clipboardWrite.state;
+        } catch {
+            res["clipboardWrite"] = "Not Support";
+        }
+        permissions = JSON.stringify(res);
     }
     return permissions;
 }
