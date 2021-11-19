@@ -91,28 +91,32 @@ function getSupportedMediaConstraints() {
 async function getPermissions() {
     let permissions = "Not Support";
     if ("permissions" in navigator) {
-        let res = {};
-        let geolocation = await navigator.permissions.query({ name: 'geolocation' });
-        res["geolocation"] = geolocation.state;
-        let notifications = await navigator.permissions.query({ name: 'notifications' });
-        res["notifications"] = notifications.state;
-        let push = await navigator.permissions.query(Object.assign({ name: "push" }, { userVisibleOnly: true }));
-        res["push"] = push.state;
-        let midi = await navigator.permissions.query(Object.assign({ name: "midi" }, { sysex: true }));
-        res["midi"] = midi.state;
-        let camera = await navigator.permissions.query({ name: 'camera' });
-        res["camera"] = camera.state;
-        let microphone = await navigator.permissions.query({ name: 'microphone' });
-        res["microphone"] = microphone.state;
-        let backgroundSync = await navigator.permissions.query({ name: 'background-sync' });
-        res["backgroundSync"] = backgroundSync.state;
-        let accelerometer = await navigator.permissions.query({ name: 'accelerometer' });
-        res["accelerometer"] = accelerometer.state;
-        let gyroscope = await navigator.permissions.query({ name: 'gyroscope' });
-        res["gyroscope"] = gyroscope.state;
-        let magnetometer = await navigator.permissions.query({ name: 'magnetometer' });
-        res["magnetometer"] = magnetometer.state;
-        permissions = JSON.stringify(res);
+        try {
+            let res = {};
+            let geolocation = await navigator.permissions.query({ name: 'geolocation' });
+            res["geolocation"] = geolocation.state;
+            let notifications = await navigator.permissions.query({ name: 'notifications' });
+            res["notifications"] = notifications.state;
+            let push = await navigator.permissions.query(Object.assign({ name: "push" }, { userVisibleOnly: true }));
+            res["push"] = push.state;
+            let midi = await navigator.permissions.query(Object.assign({ name: "midi" }, { sysex: true }));
+            res["midi"] = midi.state;
+            let camera = await navigator.permissions.query({ name: 'camera' });
+            res["camera"] = camera.state;
+            let microphone = await navigator.permissions.query({ name: 'microphone' });
+            res["microphone"] = microphone.state;
+            let backgroundSync = await navigator.permissions.query({ name: 'background-sync' });
+            res["backgroundSync"] = backgroundSync.state;
+            let accelerometer = await navigator.permissions.query({ name: 'accelerometer' });
+            res["accelerometer"] = accelerometer.state;
+            let gyroscope = await navigator.permissions.query({ name: 'gyroscope' });
+            res["gyroscope"] = gyroscope.state;
+            let magnetometer = await navigator.permissions.query({ name: 'magnetometer' });
+            res["magnetometer"] = magnetometer.state;
+            permissions = JSON.stringify(res);
+        } catch {
+            permissions = "Not Support";
+        }
     }
     return permissions;
 }
