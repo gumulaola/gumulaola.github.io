@@ -1,5 +1,10 @@
 <html>
 
+<h1 id="0"></h1>
+<h1 id="1"></h1>
+<h2 id="2"></h2>
+<h3 id="3"></h3>
+
 </html>
 
 <script>
@@ -47,9 +52,9 @@
         };
     }
 
-    document.write(getCanvas());
+    document.getElementById("0").innerHTML = getCanvas();
     let res = getWebGlInfo();
-    document.write(res["webGLVendor"]);
-    document.write(res["webGLRenderer"]);
-    document.write(navigator.userAgent);
+    document.getElementById("1").innerHTML = res["webGLVendor"];
+    document.getElementById("2").innerHTML = res["webGLRenderer"];
+    document.getElementById("3").innerHTML = navigator.userAgent;
 </script>
